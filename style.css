@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+
+.abertura {
+  position: absolute; /* Fixa o modal na tela */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  transition: opacity 1s ease;
+  z-index: 9999; /* Garante que o modal fique acima de outros elementos */
+}
+
+.logo {
+  max-width: 200px; /* Ajuste o tamanho do logo conforme necessário */
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+}
+
+header {
+  background-color: #000000;
+  color: #e5e5e5;
+  padding: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 20px;
+}
+
+nav ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.caixa-video {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.caixa-video video {
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.mascara {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0.7) 15%,
+    rgba(0, 1, 1, 0.8) 85%
+  );
+}
+
+section {
+  max-width: 1200px;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+}
+
+.caixa-principal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.caixa-principal div {
+  max-width: 40rem;
+}
+
+.caixa-principal div h3 {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: "Poppins", serif;
+}
+
+.caixa-principal div p {
+  font-family: "Poppins", serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1rem;
+  color: #fafafa9c;
+  font-weight: lighter;
+  padding: 1rem 0;
+  line-height: 1;
+}
+
+.botao-link1 {
+  background-color: #710686;
+  cursor: pointer;
+  margin-top: 2rem;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 1rem 3rem;
+  border: none;
+  transition: 0.3s linear;
+  text-decoration: none;
+}
+
+/* Estilo base do botão */
+.botao-link {
+  background-color: #710686;
+  cursor: pointer;
+  margin-top: 2rem;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 1rem 3rem;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s linear;
+}
+
+/* Estilo do texto "Em Construção" */
+.botao-link::after {
+  content: "Em Construção";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #ffcc00; /* Cor do texto "Em Construção" */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+/* Animação de construção */
+.botao-link:hover::after {
+  opacity: 1;
+}
+
+/* Efeito de brilho */
+@keyframes shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.botao-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  transition: background 0.5s ease-out;
+}
+
+.botao-link:hover::before {
+  animation: shine 1s ease-in-out forwards;
+}
+
+.caixa-principal div a:hover {
+  letter-spacing: 0.1rem;
+}
+
+.caixa-sobre h2 {
+  gap: 3px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 2rem;
+  font-family: "Poppins", serif;
+}
+
+.caixa-sobre p {
+  gap: 3px;
+  font-family: "Poppins", serif;
+  color: #fff;
+}
+.caixa-sobre h4 {
+  text-align: center;
+  color: #f1f1f1;
+  text-transform: uppercase;
+  padding-bottom: 1.5rem;
+  font-size: 1rem;
+  font-family: "Poppins", serif;
+}
+
+.caixa-sobre h2 span {
+  color: #710686;
+}
+
+.caixa-sobre .sobre-container {
+  display: flex;
+  align-items: center;
+  background-color: #03030317;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-family: "Poppins", serif;
+}
+.container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.category {
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+  width: 300px; /* Ajuste a largura conforme necessário */
+  height: 200px; /* Ajuste a altura conforme necessário */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.category .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+.category:hover .overlay {
+  opacity: 1;
+}
+
+.category p {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+.h2 {
+  color: rgb(241, 241, 241);
+  font-size: 24px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para o elemento main */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Maior espaçamento entre as seções */
+  width: 100%;
+  padding: 20px; /* Espaçamento interno para o main */
+}
+
+/* CSS para a container da grade */
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px; /* Maior margem inferior */
+}
+
+/* CSS para a grade (primeira parte) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas por fileira */
+  gap: 20px; /* Espaçamento entre os itens */
+  width: 100%;
+}
+
+/* CSS para os itens da grade */
+.grid .item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s ease;
+}
+
+.grid .item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Estilo base para container de ferramentas */
+.container-ferramentas {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centraliza verticalmente os itens */
+  width: 100%;
+  margin-bottom: 40px; /* Maior margem inferior */
+  padding: 20px; /* Adiciona espaçamento interno */
+  background-color: #f4f4f9; /* Fundo suave */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* CSS para a linha de itens (segunda parte) */
+.grid1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Maior espaçamento entre os itens */
+  width: 100%;
+  flex-wrap: wrap; /* Para que as imagens se ajustem */
+  padding: 20px; /* Adiciona espaçamento interno */
+  background-color: #f4f4f9; /* Fundo suave */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* CSS para os itens da linha */
+.grid1 .item {
+  flex: 1;
+  min-width: 220px; /* Tamanho mínimo das imagens */
+  border-radius: 10px; /* Bordas arredondadas */
+  overflow: hidden;
+  background-color: #fff; /* Fundo branco */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição para transformação e sombra */
+  position: relative; /* Necessário para o overlay */
+}
+
+/* CSS para as imagens dos itens */
+.grid1 .item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* Bordas arredondadas */
+  transition: transform 0.3s ease; /* Transição para transformação */
+}
+
+/* Efeito de zoom e sombra ao passar o mouse */
+.grid1 .item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais profunda */
+}
+
+/* Efeito de zoom nas imagens ao passar o mouse */
+.grid1 .item img:hover {
+  transform: scale(1.1); /* Aumenta o efeito de zoom na imagem */
+}
+
+/* Adicionando um overlay nos itens */
+.grid1 .item::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid1 .item:hover::after {
+  opacity: 1;
+}
+
+/* CSS para outras partes do seu projeto */
+.banner-container {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.mask-container {
+  width: 100%;
+  height: var(--height);
+  mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+  overflow: hidden;
+  position: relative;
+}
+
+footer {
+  background-color: #333; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto */
+  padding: 20px 0; /* Espaçamento interno vertical */
+  text-align: center; /* Centraliza o texto */
+  font-family: "Poppins", sans-serif; /* Fonte */
+  position: relative; /* Para permitir o uso de pseudo-elementos */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve acima do rodapé */
+}
+
+/* Estilo para o texto dentro do rodapé */
+footer p {
+  margin: 0; /* Remove a margem padrão */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+/* Adicionando um efeito de divisão no rodapé */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  margin-bottom: 20px;
+}
+
+/* Efeito de transição ao passar o mouse */
+footer:hover {
+  background-color: #444; /* Cor de fundo ao passar o mouse */
+  transition: background-color 0.3s ease;
+}
