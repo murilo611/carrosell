@@ -113,6 +113,7 @@ section {
 }
 
 .botao-link1 {
+  margin-bottom: 30px;
   background-color: #710686;
   cursor: pointer;
   margin-top: 2rem;
@@ -127,6 +128,7 @@ section {
 
 /* Estilo base do botão */
 .botao-link {
+  margin-bottom: 30px;
   background-color: #710686;
   cursor: pointer;
   margin-top: 2rem;
@@ -207,17 +209,29 @@ section {
 }
 
 .caixa-sobre p {
+  margin-bottom: 20px;
   gap: 3px;
   font-family: "Poppins", serif;
   color: #fff;
 }
 .caixa-sobre h4 {
+  margin-bottom: 20px;
   text-align: center;
-  color: #f1f1f1;
+  color: #710686;
   text-transform: uppercase;
   padding-bottom: 1.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem; /* Aumentei um pouco o tamanho da fonte */
   font-family: "Poppins", serif;
+  border-bottom: 2px solid #710686; /* Adicionei uma borda inferior */
+  background: linear-gradient(
+    to right,
+    #710686,
+    #b536da
+  ); /* Gradiente de cor */
+  -webkit-background-clip: text; /* Para o gradiente aplicar-se somente ao texto */
+  background-clip: text; /* Para o gradiente aplicar-se somente ao texto */
+  -webkit-text-fill-color: transparent; /* Para garantir que o texto pegue o gradiente */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adicionei uma sombra */
 }
 
 .caixa-sobre h2 span {
@@ -237,7 +251,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
-  gap: 20px;
+  gap: 3px;
 }
 
 .category {
